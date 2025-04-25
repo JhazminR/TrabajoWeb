@@ -1,171 +1,76 @@
-        * {
-            box-sizing: border-box;
-        }
+.columna {
+    padding: 15px;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
+.columna-50 {
+    width: 50%;
+}
 
-        header {
-            background-color: #222;
-            color: #fff;
-            padding: 1.2em 0;
-            text-align: center;
-        }
+.columna-33 {
+    width: 33.33%;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 2em;
-        }
+h2, h3 {
+    color: #555;
+}
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            background-color: #444;
-        }
+.boton {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
 
-        nav ul li {
-            margin: 0 15px;
-        }
+.boton:hover {
+    background-color: #0056b3;
+}
 
-        nav a {
-            display: block;
-            padding: 1em;
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
+footer {
+    background-color: #333;
+    color: #333;
+    padding: 1em 0;
+    text-align: center;
+    font-size: 0.9em;
+}
 
-        nav a:hover,
-        nav a.activo {
-            background-color: #007bff;
-            border-radius: 5px;
-        }
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    text-align: center;
+}
 
-        .carousel-container {
-            overflow: hidden;
-            white-space: nowrap;
-            margin-top: 1em;
-        }
+footer ul li {
+    display: inline;
+    margin: 0 10px;
+}
 
-        .carousel-container img {
-            width: 100%;
-            display: inline-block;
-        }
+footer a {
+    color: #333;
+    text-decoration: none;
+}
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
 
-        .fila {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+@media (max-width: 768px) {
+    .columna-50, .columna-33 {
+        width: 100%;
+    }
 
-        .columna-33 {
-            width: calc(33.33% - 20px);
-        }
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
 
-        .tarjeta-libro {
-            background-color: #fafafa;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 15px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease;
-        }
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
 
-        .tarjeta-libro:hover {
-            transform: translateY(-5px);
-        }
-
-        .tarjeta-libro img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 15px;
-            border-radius: 8px;
-        }
-
-        .tarjeta-libro h3 {
-            margin: 10px 0;
-            font-size: 1.1em;
-            color: #007bff;
-        }
-
-        .boton {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 15px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: auto;
-        }
-
-        .boton:hover {
-            background-color: #0056b3;
-        }
-
-        footer {
-            background-color: #222;
-            color: #fff;
-            padding: 1em 0;
-            text-align: center;
-            font-size: 0.9em;
-        }
-        .columna {
-            flex: 1;
-            padding: 10px;
-        }
-        
-        .columna-50 {
-            width: 48%;
-        }
-        
-        .columna-100 {
-            width: 100%;
-        }
-        
-        .autor {
-            background-color: #fafafa;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 15px;
-            text-align: center;
-        }
-        footer ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        
-        footer ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-        
-        footer ul li a:hover {
-            text-decoration: underline;
-        }
-        
+    .fila {
+        flex-direction: column;
+    }
+}
