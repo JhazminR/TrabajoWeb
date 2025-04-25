@@ -25,7 +25,7 @@ nav ul li {
 }
 
 nav a {
-    color: #f4f4f4;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -106,7 +106,7 @@ footer ul li {
 }
 
 footer a {
-    color: #333;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -126,6 +126,10 @@ footer a {
         padding: 15px;
     }
 
+    .fila {
+        flex-direction: column;
+    }
+}
     .fila {
         flex-direction: column;
     }
