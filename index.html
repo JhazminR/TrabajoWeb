@@ -1,35 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Librería</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/carruselcss.css">
 </head>
+
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Libros</a></li>
-                <li><a href="#">Autores</a></li>
-                <li><a href="#">Novedades</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
+            <div class="encabezado-superior">
+                <a href="paginalogo.html">
+                    <img src="img/logo1.png" class="Logo" alt="Logo de la librería">
+                </a>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="libros.html">Libros</a></li>
+                    <li><a href="autores.html">Autores</a></li>
+                    <li><a href="novedades.html">Novedades</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                <div class="buscador">
+                    <input type="text" id="inputBusqueda" placeholder="Buscar por título, autor o género..." />
+                </div>
+            </div>
         </nav>
-        <div class="carousel-container">
-            <img src="img/populares1.jpg" alt="Imagen de portada 1">
-            <img src="img/luegolopongo.jpg" alt="Imagen de portada 2">
-            <img src="img/luegolopongo.jpg" alt="Imagen de portada 3">
-        </div>
     </header>
+    <br>
+    <div class="carrusel-container">
+        <button class="prev">←</button>
+
+        <div class="carrusel">
+            <div class="carrusel-item">
+                <img src="img/banner1.jpg" alt="Imagen 1" width="1920" height="360">
+                <span class="fecha-carrusel"></span>
+            </div>
+            <div class="carrusel-item">
+                <img src="img/banner2.jpg" alt="Imagen 2" width="1920" height="360">
+                <span class="fecha-carrusel"></span>
+            </div>
+            <div class="carrusel-item">
+                <img src="img/banner3.jpg" alt="Imagen 3" width="1920" height="360">
+                <span class="fecha-carrusel"></span>
+            </div>
+            <div class="carrusel-item">
+                <img src="img/populares1.jpg" alt="Imagen 4" width="1920" height="360">
+                <span class="fecha-carrusel"></span>
+            </div>
+        </div>
+
+        <button class="next">→</button>
+    </div>
 
     <main class="container">
         <section class="fila">
             <div class="columna columna-50">
                 <h2>Nuestros Destacados</h2>
-                <p>Descubre nuestra selección de libros más populares y recomendados por nuestros lectores. ¡Encuentra tu próxima gran lectura!</p>
-                <a href="#" class="boton">Ver más</a>
+                <p>Descubre nuestra selección de libros más populares y recomendados por nuestros lectores. ¡Encuentra
+                    tu próxima gran lectura!</p>
+                <a href="libros.html" class="boton">Ver más</a>
             </div>
             <div class="columna columna-50">
                 <img src="img/Los-10-libros-más-vendidos-en-España-en-2015.png" alt="Libros destacados">
@@ -49,9 +81,9 @@
             <div class="columna columna-33">
                 <h3>Autores del Mes</h3>
                 <ul>
-                    <li><a href="#">Mario Vargas Llosa</a></li>
-                    <li><a href="#">George R. R. Martin</a></li>
-                    <li><a href="#">J. R. R. Tolkien</a></li>
+                    <li><a href="autores.html">Mario Vargas Llosa</a></li>
+                    <li><a href="autores.html">George R. R. Martin</a></li>
+                    <li><a href="autores.html">J. R. R. Tolkien</a></li>
                 </ul>
             </div>
             <div class="columna columna-33">
@@ -62,19 +94,96 @@
         </section>
     </main>
 
-    <footer>
-        <div class="container fila">
-            <div class="columna columna-50">
-                <p>&copy; 2025 Mi Librería. Todos los derechos reservados.</p>
-            </div>
-            <div class="columna columna-50">
+    <footer class="footer-personalizado">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>POLÍTICA</h4>
                 <ul>
+                    <p>&copy; 2025 Librería RJS. Todos los derechos reservados.</p>
                     <li><a href="#">Términos y Condiciones</a></li>
                     <li><a href="#">Política de Privacidad</a></li>
                     <li><a href="#">Contacto</a></li>
                 </ul>
             </div>
+
+            <div class="footer-section">
+                <h4>SÍGUENOS EN REDES</h4>
+                <div class="social-icons">
+                    <a href="#"><img src="img/twitter.png" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/ainohaa_vargas?igsh=MXd2aXNpZ3plYWt5dg==" target="_blank"><img
+                            src="img/instagram.png" alt="Instagram"></a>
+                    <a href="https://www.tiktok.com/@ainoha_vir17?_t=ZM-8wmiWF8c1W4&_r=1" target="_blank"><img
+                            src="img/tiktok.png" alt="Tiktok"></a>
+                    <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>QUE ESPERAS PARA COMPRAR EN LA LIBRERIA RJS</h4>
+                <p>Cualquier consulta comunícate al:</p>
+                <p>Tel: 917 588 125</p>
+                <p>Email: libreriaRJS@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <a href="#">Aviso legal</a> · <a href="#">Privacidad y Cookies</a>
         </div>
     </footer>
+
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.carrusel img');
+        const totalImages = images.length;
+        const carrusel = document.querySelector('.carrusel');
+
+        function showImage(index) {
+            if (index < 0) {
+                currentIndex = totalImages - 1;
+            } else if (index >= totalImages) {
+                currentIndex = 0;
+            }
+            carrusel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        document.querySelector('.prev').addEventListener('click', () => {
+            currentIndex--;
+            showImage(currentIndex);
+        });
+
+        document.querySelector('.next').addEventListener('click', () => {
+            currentIndex++;
+            showImage(currentIndex);
+        });
+
+        // Carrusel automático
+        setInterval(() => {
+            currentIndex++;
+            showImage(currentIndex);
+        }, 3000);
+
+    </script>
+
+    <audio id="audioFondo" loop>
+        <source src="audio/ambiente.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio HTML5.
+    </audio>
+    <script>
+
+        const audio = document.getElementById("audioFondo");
+        function iniciarAudio() {
+            audio.play().catch(e => {
+                console.warn("El navegador bloqueó el audio:", e);
+            });
+            document.removeEventListener('click', iniciarAudio);
+        }
+        document.addEventListener('click', iniciarAudio);
+    </script>
+
+    <a href="https://wa.me/51984042654" class="whatsapp-float" target="_blank" title="Escríbenos por WhatsApp">
+        <img src="img/whatsapp-icon.png" alt="WhatsApp" />
+    </a>
+
 </body>
+
 </html>

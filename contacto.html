@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Mi Librería</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="encabezado-superior">
+                <a href="paginalogo.html">
+                    <img src="img/logo1.png" class="Logo">
+                </a>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="libros.html">Libros</a></li>
+                    <li><a href="autores.html">Autores </a></li>
+                    <li><a href="novedades.html">Novedades</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                <div class="buscador">
+                    <input type="text" id="inputBusqueda" placeholder="Buscar por título, autor o género..." />
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="fila">
+            <h2>Contáctanos</h2>
+            <p>¿Tienes preguntas o sugerencias? Estaremos encantados de saber de ti.</p>
+            <form action="#" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                <button type="submit" class="boton">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer-personalizado">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>POLÍTICA</h4>
+                <ul>
+                    <p>&copy; 2025 Librería RJS. Todos los derechos reservados.</p>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>SÍGUENOS EN REDES</h4>
+                <div class="social-icons">
+                    <a href="#"><img src="img/twitter.png" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/ainohaa_vargas?igsh=MXd2aXNpZ3plYWt5dg==" target="_blank"><img
+                            src="img/instagram.png" alt="Instagram"></a>
+                    <a href="https://www.tiktok.com/@ainoha_vir17?_t=ZM-8wmiWF8c1W4&_r=1" target="_blank"><img
+                            src="img/tiktok.png" alt="Tiktok"></a>
+                    <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>QUE ESPERAS PARA COMPRAR EN LA LIBRERIA RJS</h4>
+                <p>Cualquier consulta comunícate al:</p>
+                <p>Tel: 917 588 125</p>
+                <p>Email: libreriaRJS@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <a href="#">Aviso legal</a> · <a href="#">Privacidad y Cookies</a>
+        </div>
+    </footer>
+</body>
+
+</html>
