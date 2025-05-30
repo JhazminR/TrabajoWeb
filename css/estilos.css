@@ -63,7 +63,7 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 25px;
     padding: 10px 15px;
     border-radius: 5px;
 }
@@ -101,7 +101,7 @@ h1 {
 }
 
 .contenido h2 {
-    color: #007BFF;
+    color: #333;
 }
 
 .contenido p {
@@ -118,11 +118,42 @@ h1 {
     border-radius: 10px;
 }
 
+.columna {
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.columna-50 {
+    flex: 0 0 50%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.columna-50 img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.columna-30 {
+    flex: 0 0 45%;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.columna-30 img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 .fila {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
 }
 
 .columna-33 {
@@ -158,6 +189,23 @@ h1 {
     margin: 10px 0;
     font-size: 1.1em;
     color: #007bff;
+}
+
+
+.destacados .columna-50 {
+    width: 50%;
+    float: left;
+}
+
+.novedades .columna-50 {
+    width: 50%;
+    float: left;
+}
+
+.destacados .columna-50 img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 .boton {
@@ -348,6 +396,7 @@ footer {
 
 @media (max-width: 768px) {
 
+    .columna-30,
     .columna-50,
     .columna-33 {
         width: 100%;
@@ -356,6 +405,59 @@ footer {
     .container {
         width: 95%;
         padding: 15px;
+    }
+
+    .carrusel-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .carrusel {
+        display: flex;
+        transition: transform 0.5s ease;
+        width: 100%;
+    }
+
+    .carrusel-item {
+        flex: 0 0 100%;
+        text-align: center;
+    }
+
+    .carrusel-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .columna-50 {
+        width: 100%;
+        float: none;
+    }
+
+    .prev,
+    .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
     }
 
     .fila {
@@ -379,6 +481,17 @@ footer {
     .Logo {
         display: block;
         margin: 0 auto;
+    }
+
+    .destacados .columna-50,
+    .novedades .columna-50 {
+        width: 100%;
+        float: none;
+    }
+
+    .destacados .fila,
+    .novedades .fila {
+        flex-direction: column;
     }
 
     .footer-container {
