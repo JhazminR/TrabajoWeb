@@ -12,7 +12,10 @@
 <body>
     <header>
         <nav>
+
             <div class="encabezado-superior">
+                <button class="hamburger" onclick="toggleMenu()">☰</button>
+
                 <a href="paginalogo.html">
                     <img src="img/logo1.png" class="Logo" alt="Logo de la librería">
                 </a>
@@ -22,6 +25,7 @@
                     <li><a href="autores.html">Autores</a></li>
                     <li><a href="novedades.html">Novedades</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="login.html">Iniciar sesión</a></li>
                 </ul>
                 <div class="buscador">
                     <input type="text" id="inputBusqueda" placeholder="Buscar por título, autor o género..." />
@@ -61,21 +65,9 @@
                 <h2>Nuestros Destacados</h2>
                 <p>Descubre nuestra selección de libros más populares y recomendados por nuestros lectores. ¡Encuentra
                     tu próxima gran lectura!</p>
-
-                <p>Desde los clásicos imperdibles hasta las novedades más emocionantes del momento, nuestra colección ha
-                    sido cuidadosamente curada para ofrecerte historias que inspiran, entretienen y dejan huella.</p>
-
-                <p>Sumérgete en aventuras inolvidables, romances apasionantes, misterios por resolver y mundos que te
-                    atraparán desde la primera página. Ya seas amante de la ficción, el suspenso, la fantasía o la
-                    literatura contemporánea, aquí encontrarás títulos que conectan contigo y con tus emociones.</p>
-
-                <p>Además, te acercamos a las voces más influyentes de la literatura actual, así como a nuevos talentos
-                    que están marcando tendencia. Cada libro es una puerta a nuevas ideas, a otras culturas y a
-                    reflexiones profundas sobre el mundo que nos rodea.</p>
-
                 <a href="libros.html" class="boton">Ver más</a>
             </div>
-            <div class="columna columna-30">
+            <div class="columna columna-50">
                 <img src="img/Los-10-libros-más-vendidos-en-España-en-2015.png" alt="Libros destacados">
             </div>
         </section>
@@ -88,6 +80,7 @@
                     <li><a href="#">Misterio</a></li>
                     <li><a href="#">Ciencia Ficción</a></li>
                     <li><a href="#">Romance</a></li>
+                    <li><a href="login.html">Iniciar sesión</a></li>
                 </ul>
             </div>
             <div class="columna columna-33">
@@ -115,6 +108,7 @@
                     <li><a href="#">Términos y Condiciones</a></li>
                     <li><a href="#">Política de Privacidad</a></li>
                     <li><a href="#">Contacto</a></li>
+                    <li><a href="login.html">Iniciar sesión</a></li>
                 </ul>
             </div>
 
@@ -177,7 +171,7 @@
     </script>
 
     <audio id="audioFondo" loop>
-        <source src="audio/ambiente.mp3" type="audio/mpeg">
+        <source src="audio/Gyumnopedies Dai 1 Ban.m4a" type="audio/mpeg">
         Tu navegador no soporta audio HTML5.
     </audio>
     <script>
@@ -196,6 +190,55 @@
         <img src="img/whatsapp-icon.png" alt="WhatsApp" />
     </a>
 
+
+    <script>
+        function toggleMenu() {
+            const navItems = document.querySelector('.encabezado-superior ul');
+            navItems.classList.toggle('visible');
+        }
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const usuario = localStorage.getItem("usuarioActivo");
+            if (usuario) {
+                const nav = document.querySelector(".encabezado-superior ul");
+                if (nav) {
+                    const li = document.createElement("li");
+                    li.textContent = "👤 " + usuario;
+                    nav.appendChild(li);
+                }
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const usuario = localStorage.getItem("usuarioActivo");
+            if (usuario) {
+                const nav = document.querySelector(".encabezado-superior ul");
+                if (nav) {
+                    const liUsuario = document.createElement("li");
+                    liUsuario.textContent = "👤 " + usuario;
+                    nav.appendChild(liUsuario);
+
+                    const liCerrar = document.createElement("li");
+                    const btnCerrar = document.createElement("a");
+                    btnCerrar.href = "#";
+                    btnCerrar.textContent = "Cerrar sesión";
+                    btnCerrar.onclick = () => {
+                        localStorage.removeItem("usuarioActivo");
+                        location.reload();
+                    };
+                    liCerrar.appendChild(btnCerrar);
+                    nav.appendChild(liCerrar);
+                }
+            }
+        });
+    </script>
 </body>
+
+
+
 
 </html>

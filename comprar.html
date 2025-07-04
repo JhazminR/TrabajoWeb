@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Comprar Libro</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <style>
+        .compra-container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+        .compra-container img {
+            width: 120px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
+        .resumen {
+            margin-top: 20px;
+            background: #e2ffe2;
+            padding: 10px;
+            border: 1px solid #b2ffb2;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="compra-container">
+        <h2>Finalizar Compra</h2>
+        <div id="infoLibro"></div>
+
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" min="1" value="1" style="margin-bottom: 15px; width: 100%; padding: 8px;">
+
+        <button onclick="finalizarCompra()" style="padding: 10px 20px;">Confirmar Compra</button>
+
+        <div class="resumen" id="resumenCompra"></div>
+    </div>
+
+    <script src="js/libros.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const idLibro = parseInt(params.get("libro"));
+        const libro = libros.find(l => l.id === idLibro);
+
+        const infoDiv = document.getElementById("infoLibro");
+        const resumenDiv = document.getElementById("resumenCompra");
+
+        if (!libro) {
+            infoDiv.innerHTML = "<p><strong>Libro no encontrado.</strong></p>";
+        } else {
+            infoDiv.innerHTML = `
+                <img src="${libro.imagen || 'img/no-disponible.png'}" alt="${libro.titulo}">
+                <h3>${libro.titulo}</h3>
+                <p><strong>Autor:</strong> ${libro.autor}</p>
+                <p><strong>Género:</strong> ${libro.genero}</p>
+                <p><strong>Precio unitario:</strong> S/ ${libro.precio.toFixed(2)}</p>
+                <p><strong>Estado:</strong> ${libro.disponible ? "Disponible" : "No disponible"}</p>
+            `;
+        }
+
+        function finalizarCompra() {
+            const cantidad = parseInt(document.getElementById("cantidad").value);
+            if (!cantidad || cantidad < 1) {
+                alert("Ingrese una cantidad válida.");
+                return;
+            }
+
+            const total = (libro.precio * cantidad).toFixed(2);
+            resumenDiv.style.display = "block";
+            resumenDiv.innerHTML = `
+                <h4>Resumen de Compra</h4>
+                <p><strong>Libro:</strong> ${libro.titulo}</p>
+                <p><strong>Cantidad:</strong> ${cantidad}</p>
+                <p><strong>Total a pagar:</strong> S/ ${total}</p>
+                <p><em>(Compra simulada. No se realiza ningún pago real)</em></p>
+            `;
+        }
+    </script>
+
+
+
+<div style="text-align: center; margin-top: 20px;">
+    <a href="libros.html" class="btn-volver">← Volver a la tienda</a>
+</div>
+
+<script>
+    // Simulación de finalización de compra
+    localStorage.removeItem("carritoCantidad");
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const usuario = localStorage.getItem("usuarioActivo");
+    if (usuario) {
+        const nav = document.querySelector(".encabezado-superior ul");
+        if (nav) {
+            const li = document.createElement("li");
+            li.textContent = "👤 " + usuario;
+            nav.appendChild(li);
+        }
+    }
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const usuario = localStorage.getItem("usuarioActivo");
+    if (usuario) {
+        const nav = document.querySelector(".encabezado-superior ul");
+        if (nav) {
+            const liUsuario = document.createElement("li");
+            liUsuario.textContent = "👤 " + usuario;
+            nav.appendChild(liUsuario);
+
+            const liCerrar = document.createElement("li");
+            const btnCerrar = document.createElement("a");
+            btnCerrar.href = "#";
+            btnCerrar.textContent = "Cerrar sesión";
+            btnCerrar.onclick = () => {
+                localStorage.removeItem("usuarioActivo");
+                location.reload();
+            };
+            liCerrar.appendChild(btnCerrar);
+            nav.appendChild(liCerrar);
+        }
+    }
+});
+</script>
+<script>
+function toggleMenu() {
+    const navItems = document.querySelector('.encabezado-superior ul');
+    navItems.classList.toggle('visible');
+}
+</script>
+</body>
+
+
+
+
+</html>
