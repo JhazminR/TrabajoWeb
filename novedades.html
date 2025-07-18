@@ -12,9 +12,6 @@
     <header>
         <nav>
             <div class="encabezado-superior">
-    
-    <button class="hamburger" onclick="toggleMenu()">☰</button>
-
                 <a href="paginalogo.html">
                     <img src="img/logo1.png" class="Logo" alt="Logo de la librería">
                 </a>
@@ -24,8 +21,7 @@
                     <li><a href="autores.html">Autores</a></li>
                     <li><a href="novedades.html">Novedades</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="login.html">Iniciar sesión</a></li>
-        </ul>
+                </ul>
                 <div class="buscador">
                     <input type="text" id="inputBusqueda" placeholder="Buscar por título, autor o género..." />
                 </div>
@@ -59,8 +55,7 @@
                     <li><a href="#">Términos y Condiciones</a></li>
                     <li><a href="#">Política de Privacidad</a></li>
                     <li><a href="#">Contacto</a></li>
-                    <li><a href="login.html">Iniciar sesión</a></li>
-        </ul>
+                </ul>
             </div>
 
             <div class="footer-section">
@@ -87,55 +82,6 @@
             <a href="#">Aviso legal</a> · <a href="#">Privacidad y Cookies</a>
         </div>
     </footer>
-
-<script>
-function toggleMenu() {
-    const navItems = document.querySelector('.encabezado-superior ul');
-    navItems.classList.toggle('visible');
-}
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const usuario = localStorage.getItem("usuarioActivo");
-    if (usuario) {
-        const nav = document.querySelector(".encabezado-superior ul");
-        if (nav) {
-            const li = document.createElement("li");
-            li.textContent = "👤 " + usuario;
-            nav.appendChild(li);
-        }
-    }
-});
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const usuario = localStorage.getItem("usuarioActivo");
-    if (usuario) {
-        const nav = document.querySelector(".encabezado-superior ul");
-        if (nav) {
-            const liUsuario = document.createElement("li");
-            liUsuario.textContent = "👤 " + usuario;
-            nav.appendChild(liUsuario);
-
-            const liCerrar = document.createElement("li");
-            const btnCerrar = document.createElement("a");
-            btnCerrar.href = "#";
-            btnCerrar.textContent = "Cerrar sesión";
-            btnCerrar.onclick = () => {
-                localStorage.removeItem("usuarioActivo");
-                location.reload();
-            };
-            liCerrar.appendChild(btnCerrar);
-            nav.appendChild(liCerrar);
-        }
-    }
-});
-</script>
 </body>
-
-
-
 
 </html>
